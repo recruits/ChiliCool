@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- MySQL driver.jar -->
+	<classPathEntry
+		location="D:/devsoftware/repository/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar" />
+	<!-- Oracle driver.jar <classPathEntry location="C:\Users\guoxingwang-cttic\.m2\repository\com\oracle\ojdbc6\11.2.0.3.0\ojdbc6-11.2.0.3.0.jar" 
+		/> -->
+	<context id="DatabaseTables" targetRuntime="MyBatis3">
+		<!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin"> 
+			<property name="searchString" value="Example$" /> <property name="replaceString" 
+			value="Criteria" /> </plugin> -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!-- MySQL datalink -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test" userId="netaddr" password="netaddr">
+		</jdbcConnection>
+
+
+		<!-- Oracle datalink <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+			connectionURL="jdbc:oracle:thin:@10.0.0.55:3026:s4boss" userId="crm" password="AjkQWE_67"> 
+			</jdbcConnection> -->
+		<!-- Oracle datalink <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+			connectionURL="jdbc:oracle:thin:@localhost:1521:XE" userId="CRM" password="CRM"> 
+			</jdbcConnection> -->
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.zzc.netcrawler.domain"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.zzc.netcrawler.dao"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.zzc.netcrawler.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!--
+		<table tableName="NET_INDEX" domainObjectName="NetIndex">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="NET_INFO" domainObjectName="NetInfo">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="NET_LOG" domainObjectName="NetLog">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="NET_QUEUE_LOG" domainObjectName="NetQueueLog">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="NET_LOG" domainObjectName="NetLog">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		-->
+		<table tableName="NET_QUEUE_LOG" domainObjectName="NetQueueLog">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+	</context>
+</generatorConfiguration>

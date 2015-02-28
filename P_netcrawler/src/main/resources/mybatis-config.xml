@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="aggressiveLazyLoading" value="false" />
+	</settings>
+	<!-- <typeAliases>   
+       <typeAlias alias="netAddr" type="com.zzc.netcrawler.beanset.NetAddr"/>   
+    </typeAliases>   
+    <environments default="development">   
+       <environment id="development">   
+           <transactionManager type="jdbc"/>   
+           <dataSource type="POOLED">   
+              <property name="driver" value="com.mysql.jdbc.Driver"/>   
+              <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>   
+              <property name="username" value="netaddr"/>   
+              <property name="password" value="netaddr"/>   
+           </dataSource>   
+       </environment>   
+    </environments>    -->
+    <mappers>   
+        <mapper resource="com/zzc/netcrawler/dao/NetIndexMapper.xml" />
+        <mapper resource="com/zzc/netcrawler/dao/NetInfoMapper.xml" />
+        <mapper resource="com/zzc/netcrawler/dao/NetQueueLogMapper.xml" />
+    </mappers> 
+</configuration>

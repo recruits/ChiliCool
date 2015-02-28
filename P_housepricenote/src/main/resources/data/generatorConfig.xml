@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- MySQL driver.jar -->
+	<classPathEntry
+		location="D:/devsoftware/repository/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar" />
+	<!-- Oracle driver.jar <classPathEntry location="C:\Users\guoxingwang-cttic\.m2\repository\com\oracle\ojdbc6\11.2.0.3.0\ojdbc6-11.2.0.3.0.jar" 
+		/> -->
+	<context id="DatabaseTables" targetRuntime="MyBatis3">
+		<!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin"> 
+			<property name="searchString" value="Example$" /> <property name="replaceString" 
+			value="Criteria" /> </plugin> -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!-- MySQL datalink -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/hpnote" userId="hpnote" password="hpnote">
+		</jdbcConnection>
+
+
+		<!-- Oracle datalink <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+			connectionURL="jdbc:oracle:thin:@10.0.0.55:3026:s4boss" userId="crm" password="AjkQWE_67"> 
+			</jdbcConnection> -->
+		<!-- Oracle datalink <jdbcConnection driverClass="oracle.jdbc.OracleDriver" 
+			connectionURL="jdbc:oracle:thin:@localhost:1521:XE" userId="CRM" password="CRM"> 
+			</jdbcConnection> -->
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.zzc.hpnote.domain"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.zzc.hpnote.dao"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.zzc.hpnote.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 
+		<table tableName="AREA" domainObjectName="Area">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="BASE_INFO" domainObjectName="BaseInfo">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="PRICE_INFO" domainObjectName="PriceInfo">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="PARAM_DEFINE" domainObjectName="ParamDefine">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="PARAM_DETAIL" domainObjectName="ParamDetail">
+			<property name="useActualColumnNames" value="false" />
+		</table> 
+		<table tableName="QUEUE_LOG" domainObjectName="QueueLog">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="TASK_CONF" domainObjectName="TaskConf">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="TASK_FAIL_DB" domainObjectName="TaskFailDb">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		-->
+		<table tableName="TASK_MGR" domainObjectName="TaskMgr">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		
+	</context>
+</generatorConfiguration>

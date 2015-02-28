@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="aggressiveLazyLoading" value="false" />
+	</settings>
+    <mappers>   
+        <mapper resource="com/zzc/hpnote/dao/AreaMapper.xml" />
+        <mapper resource="com/zzc/hpnote/dao/BaseInfoMapper.xml" />
+        <mapper resource="com/zzc/hpnote/dao/ParamDefineMapper.xml" />
+        <mapper resource="com/zzc/hpnote/dao/ParamDetailMapper.xml" /> 
+        <mapper resource="com/zzc/hpnote/dao/PriceInfoMapper.xml" /> 
+    </mappers> 
+</configuration>
