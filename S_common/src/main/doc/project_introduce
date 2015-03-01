@@ -1,0 +1,9 @@
+--工程说明V1.0.1--
+1. Create_Date[20150301]
+2. com.chilicool.common.columncomp包目录
+	a.实现功能：比较pdm和数据库中的表结构
+	b.实现步骤：
+	++1) 使用powerdesigner打开PDM文件，使用 ctrl + shift + x 组合键打开脚本窗口，粘贴"export_columns_pdm.vbs"中的内容到窗口里，点击执行，生成xls文件，复制xls中的文件到"PDM_COLUMNS.txt"中。
+	++2) 使用plsql连接到数据库，粘贴"export_columns_db.vbs"中的内容到plsql里，执行查询，复制查询结果到"DB_COLUMNS.txt"中。
+	++3) 修改 "ObjectParseFromDb.fileName" 和 "ObjectParseFromPdm.fileName" 的配置路径。
+	++4) 运行 CompareUtil.
