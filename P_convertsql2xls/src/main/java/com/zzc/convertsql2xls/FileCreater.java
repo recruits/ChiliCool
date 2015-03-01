@@ -20,7 +20,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.zzc.convertsql2xls.bean.ColumnObj;
 import com.zzc.convertsql2xls.bean.TableObj;
