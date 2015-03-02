@@ -1,3 +1,8 @@
+--工程说明V1.0.2--
+1. Function add[20150302]
+2. com.chilicool.common.operfiles包目录
+	a.实现功能：根据提供的文件目录路径，把当前目录中的文件生成一个数据库脚本
+	
 --工程说明V1.0.1--
 1. Create_Date[20150301]
 2. com.chilicool.common.columncomp包目录
