@@ -18,6 +18,7 @@
 		<module>P_netcrawler</module>
     	<module>P_housepricenote</module>
     <module>S_common</module>
+    <module>P_reporttool</module>
   </modules>
 
 	<repositories>
