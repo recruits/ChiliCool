@@ -29,7 +29,7 @@ public class TemplateParser {
 	}
 	
 	private void readTemplateFileCont(){
-		this.templateCont = FileOperUtil.readFileContent(this.templatePath);
+		this.templateCont = CommonUtil.readFileContent(this.templatePath);
 	}
 	
 	private void createTemplateBean(){

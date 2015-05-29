@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.chilicool</groupId>
 	<artifactId>ChiliCool</artifactId>
@@ -16,32 +17,32 @@
 		<module>S_agile</module>
 		<module>P_convertsql2xls</module>
 		<module>P_netcrawler</module>
-    	<module>P_housepricenote</module>
-    <module>S_common</module>
-    <module>P_reporttool</module>
-  </modules>
+		<module>P_housepricenote</module>
+		<module>S_common</module>
+		<module>P_reporttool</module>
+	</modules>
 
 	<repositories>
-		<repository>  
-		    <id>central</id>  
-		    <name>Maven Repository Switchboard</name>  
-		    <layout>default</layout>  
-		    <url>http://repo1.maven.org/maven2</url>  
-		    <snapshots>  
-		      <enabled>false</enabled>  
-		    </snapshots>  
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>ChiliCool</id>
 			<name>forz Maven Repository</name>
-			<url>http://10.0.20.191:8081/nexus/content/groups/public</url>
+			<url>http://192.168.180.112:8081/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>ChiliCool</id>
 			<name>forz Maven Repository</name>
-			<url>http://10.0.20.191:8081/nexus/content/groups/public</url>
+			<url>http://192.168.180.112:8081/nexus/content/groups/public</url>
 		</pluginRepository>
 	</pluginRepositories>
 
@@ -79,13 +80,8 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
-		<!--  
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
-		-->
+		<!-- <dependency> <groupId>commons-lang</groupId> <artifactId>commons-lang</artifactId> 
+			<version>2.6</version> </dependency> -->
 		<dependency>
 			<groupId>jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
@@ -126,11 +122,8 @@
 			<artifactId>spring-test</artifactId>
 			<version>3.2.8.RELEASE</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.apache.ibatis</groupId>
-			<artifactId>ibatis-sqlmap</artifactId>
-			<version>2.3.4.726</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.apache.ibatis</groupId> <artifactId>ibatis-sqlmap</artifactId> 
+			<version>2.3.4.726</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-dao</artifactId>
@@ -141,23 +134,15 @@
 			<artifactId>spring-orm</artifactId>
 			<version>3.2.8.RELEASE</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.apache.ibatis</groupId>
-			<artifactId>ibatis-core</artifactId>
-			<version>3.0</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.apache.ibatis</groupId> <artifactId>ibatis-core</artifactId> 
+			<version>3.0</version> </dependency> -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.1</version>
 		</dependency>
-		<!--  
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-		-->
+		<!-- <dependency> <groupId>commons-dbcp</groupId> <artifactId>commons-dbcp</artifactId> 
+			<version>1.4</version> </dependency> -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -183,5 +168,22 @@
 			<artifactId>ehcache-core</artifactId>
 			<version>2.6.9</version>
 		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>11.1.0.7.0</version>
+		</dependency>
+		<!--  
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>5.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>iTextAsian</artifactId>
+			<version>1.0</version>
+		</dependency>
+		-->
 	</dependencies>
 </project>

@@ -2,3 +2,7 @@
 1. 启动JUnit测试类，会报：XML-24509: (Error) Duplicated definition for: 'propertyPlaceholder' 等错误
 	解决办法，在Run Configurations -> Arguments -> VM Arguments中增加下面的参数
 	-Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
+	
+2. 使用Mybatis生成代码的时候，会报错，需要在jvm中加入参数
+	-Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+    -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
