@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class TemplateBeanInfo {
 	private String beanName;
+	private String beanPackage;
+	private String serviceBeanPackage;
 	private List<TemplateBeanAttrInfo> beanAttrInfo;
 	private boolean hasListAttr;
 	private Map<String, TemplateBeanInfo> subBeans;
@@ -14,6 +16,18 @@ public class TemplateBeanInfo {
 	}
 	public void setBeanName(String beanName) {
 		this.beanName = beanName;
+	}
+	public String getBeanPackage() {
+		return beanPackage;
+	}
+	public void setBeanPackage(String beanPackage) {
+		this.beanPackage = beanPackage;
+	}
+	public String getServiceBeanPackage() {
+		return serviceBeanPackage;
+	}
+	public void setServiceBeanPackage(String serviceBeanPackage) {
+		this.serviceBeanPackage = serviceBeanPackage;
 	}
 	public List<TemplateBeanAttrInfo> getBeanAttrInfo() {
 		return beanAttrInfo;

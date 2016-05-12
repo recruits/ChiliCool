@@ -101,5 +101,4 @@ public class CommonUtil {
 	public static final String ignoreDbData = "ignoreDbData";
 	
 	public static final String ERROR = "error";
-	public static final String DB_SERVICE_NAME = "cn.cttic.wtms.common.tool.report.DbDataService";
 }

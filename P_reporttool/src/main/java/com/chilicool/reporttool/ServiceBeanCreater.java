@@ -44,12 +44,18 @@ public class ServiceBeanCreater {
 		if(prefix.equals("GN") || prefix.equals("GJ") || prefix.equals("HX")){
 			beanName = prefix + "Deal" + beanName.substring(2) + "Service";
 		}
+		if(beanName.indexOf("Service") == -1){
+			beanName += "Service";
+		}
 		this.serviceName = beanName;
 		this.beanFileDir = filePath;
 		this.beanFilePath = filePath + "\\" + beanName + ".java";
 		this.beanInfo = beanInfo;
 		
-		String packageForShort = this.beanPackage.substring(8);
+		String servicePkg = "package " + this.beanInfo.getServiceBeanPackage();
+		servicePkg = "package ".equals(servicePkg) ? this.beanPackage.substring(8) : servicePkg.substring(8);
+		
+		String packageForShort = servicePkg;
 		this.serviceBeanName = StringUtils.removeEnd(packageForShort, ";") + "." + this.serviceName;
 	}
 	public String getBeanFilePath() {
@@ -62,16 +68,14 @@ public class ServiceBeanCreater {
 
 
 	private String lineFeed = System.getProperty("line.separator");
-	@SuppressWarnings("unused")
 	private TemplateBeanInfo beanInfo;
 	
 	private String serviceBeanName = "";
 	private String serviceName = "";
-	@SuppressWarnings("unused")
 	private String beanFileDir = "";
 	private String beanFilePath = "";
-	private String beanPackage = "package cn.cttic.wtms.common.report.service.impl;";
-	private String importListInfo = "import java.util.List;" + lineFeed + "import java.util.Map;" + lineFeed + "import org.springframework.stereotype.Service;" + lineFeed + "import cn.cttic.wtms.common.report.model.ITemplateBean;";
+	private String beanPackage = "package cn.cttic.vehicle.business.service.impl;";
+	private String importListInfo = "import java.util.List;" + lineFeed + "import java.util.Map;" + lineFeed + "import org.springframework.stereotype.Service;" + lineFeed + "import cn.cttic.sysframe.frame.model.ITemplateBean;" + lineFeed + "import cn.cttic.sysframe.frame.service.print.impl.DealBaseBusiService;";
 	private String beanDefInfo = "@Service" + lineFeed + "public class {0} extends DealBaseBusiService`";
 	private String impMethod1 = "\t@Override" + lineFeed + "\tprotected List<? extends ITemplateBean> buildDataSource() `" + lineFeed + "\t\treturn null;" + lineFeed + "\t!";
 	private String impMethod2 = "\t@Override" + lineFeed + "\tprotected Map<String, Object> buildReportParams() `" + lineFeed + "\t\treturn null;" + lineFeed + "\t!";

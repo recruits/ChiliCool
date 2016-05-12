@@ -4,8 +4,9 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeansException;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class GeneratReportCode {
 
 	public void generateCode() {
@@ -47,6 +48,8 @@ public class GeneratReportCode {
 			nextStep = false;
 			return;
 		}
+		
+		this.beanInfo.setBeanPackage(this.beanPackage);
 		javaBeanCreater = new JavaBeanCreater();
 		javaBeanCreater.createBeanFile(javaBeanPath, beanInfo);
 		CommonUtil.logInfo("JavaBean文件创建完成，文件路径：" + javaBeanCreater.getBeanFilePath());
@@ -63,6 +66,8 @@ public class GeneratReportCode {
 			nextStep = false;
 			return;
 		}
+		
+		this.beanInfo.setServiceBeanPackage(this.serviceBeanPackage);
 		serviceBeanCreater = new ServiceBeanCreater();
 		serviceBeanCreater.createBeanFile(serviceBeanPath, beanInfo);
 		CommonUtil.logInfo("ServiceBean文件创建完成，文件路径：" + serviceBeanCreater.getBeanFilePath());
@@ -74,13 +79,11 @@ public class GeneratReportCode {
 		}
 		
 		try {
-			dbDataService = (DbDataService) SpringContextUtil.getBean(Class.forName(CommonUtil.DB_SERVICE_NAME));
+			dbDataService = (DbDataService) SpringContextUtil.getBean(DbDataService.class);
 			dbDataService.saveCfgData(beanInfo, serviceBeanCreater.getServiceBeanName());
 		} catch (BeansException e) {
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+		} 
 	}
 	
 	private boolean ignoreDbDataCheck(){
@@ -99,11 +102,15 @@ public class GeneratReportCode {
 	private DbDataService dbDataService = null;
 	private boolean nextStep = true;
 	private String ignoreDbData = "";
+	private String beanPackage = "";
+	private String serviceBeanPackage = "";
 	
 	private void initParam(){
 		if(null == propObj){
 			this.propObj = CommonUtil.getProperties();
 			this.ignoreDbData = this.propObj.getProperty(CommonUtil.ignoreDbData);
+			this.beanPackage = this.propObj.getProperty(CommonUtil.javaBeanPackage);
+			this.serviceBeanPackage = this.propObj.getProperty(CommonUtil.serviceBeanPackage);
 		}
 	}
 }

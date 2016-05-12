@@ -20,15 +20,21 @@ public class JavaBeanCreater {
 	}
 	
 	private void createTemplateBeanFile(){
+		String beanPkg = "package " + this.beanInfo.getBeanPackage();
+		beanPkg = "package ".equals(beanPkg) ? this.beanPackage : beanPkg;
+		
 		// 开始生成Bean文件
-		StringBuffer beanFile = new StringBuffer(beanPackage);
+		StringBuffer beanFile = new StringBuffer(beanPkg);
 		StringBuffer beanAttrMethod = new StringBuffer();
 		StringBuffer strucFuncName = new StringBuffer();
 		StringBuffer strucFuncCont = new StringBuffer();
 		
 		// 引入List类型
+		beanFile.append(lineFeed).append(lineFeed);
 		if(this.beanInfo.isHasListAttr()){
-			beanFile.append(lineFeed).append(lineFeed).append(importListInfo);
+			beanFile.append(importListInfo).append(lineFeed).append(importInterfaceInfo);
+		} else {
+			beanFile.append(importInterfaceInfo);
 		}
 		
 		// 创建类签名
@@ -75,6 +81,7 @@ public class JavaBeanCreater {
 			for(String currAttrName : keyName){
 				TemplateBeanInfo currSubBean = subBeanInfos.get(currAttrName);
 				if(null != currSubBean){
+					currSubBean.setBeanPackage(this.beanInfo.getBeanPackage());	// 补充类路径
 					new JavaBeanCreater().createBeanFile(this.beanFileDir, currSubBean);
 				}
 			}
@@ -102,8 +109,9 @@ public class JavaBeanCreater {
 	// 文件创建基础数据
 	private String beanFileDir = "";
 	private String beanFilePath = "";
-	private String beanPackage = "package cn.cttic.wtms.common.report.model;";
+	private String beanPackage = "package cn.cttic.vehicle.business.model;";
 	private String importListInfo = "import java.util.List;";
+	private String importInterfaceInfo = "import cn.cttic.sysframe.frame.model.ITemplateBean;";
 	private String beanDefInfo = "public class {0} extends ITemplateBean`";
 	private String strucFunction = "\tpublic {0}() `" + lineFeed + "\t\tsuper();" + lineFeed + "\t!";
 	private String strucFunctionWithField = "\tpublic {0}({1}) `" + lineFeed + "\t\tsuper();{2}" + lineFeed + "\t!";
