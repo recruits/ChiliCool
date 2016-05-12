@@ -4,6 +4,7 @@ import java.io.Reader;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 
+@SuppressWarnings("unused")
 public class MyBatisUtil {
 //	private final static SqlSessionFactory sqlSessionFactory;
 	static {

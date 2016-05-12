@@ -210,6 +210,7 @@ public class DataHolder {
 	 */
 	private void readTaskFromQueus(){
 		Thread appendTask=new Thread(new Runnable(){
+			@SuppressWarnings("null")
 			@Override
 			public void run() {
 				while(true){
@@ -221,7 +222,7 @@ public class DataHolder {
 								SqlSession sqlSession = sqlSessionFactory.openSession();
 								
 								Timestamp currTime = DateUtil.getTimestamp(new Date());
-								NetAddr netAddr = null ;//wData.getNetAddr();
+								NetAddr netAddr = null; //wData.getNetAddr();
 								String errorMsg = wData.getPageErrorMsg();
 								boolean errorMsgEmpty = StringUtils.isEmpty(errorMsg);
 								try {

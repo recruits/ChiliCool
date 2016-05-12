@@ -62,10 +62,12 @@ public class ServiceBeanCreater {
 
 
 	private String lineFeed = System.getProperty("line.separator");
+	@SuppressWarnings("unused")
 	private TemplateBeanInfo beanInfo;
 	
 	private String serviceBeanName = "";
 	private String serviceName = "";
+	@SuppressWarnings("unused")
 	private String beanFileDir = "";
 	private String beanFilePath = "";
 	private String beanPackage = "package cn.cttic.wtms.common.report.service.impl;";

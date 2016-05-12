@@ -14,6 +14,7 @@ import com.zzc.hpnote.dao.TaskFailDbMapper;
  */
 @Service
 public class TaskFailDbInit {
+	@SuppressWarnings("unused")
 	@Autowired
 	private TaskFailDbMapper taskFailDbDao;
 }
